@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLang, fmtNum } from "@/i18n";
 import { SERIES, SECTOR_ROWS, LATEST } from "@/data";
 import { TightnessChart } from "@/components/charts";
+import ShareableCharts from "@/components/ShareableCharts";
 
 export default function Home() {
   const { t, lang } = useLang();
@@ -78,6 +79,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ShareableCharts projectKey="labour" />
     </div>
   );
 }
