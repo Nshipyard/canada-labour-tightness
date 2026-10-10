@@ -11,6 +11,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://labour.canada.nshipyard.com"),
   title: "Cross-Border Labour Tightness | Open Nshipyard",
   description:
     "The US and Canada both publish job vacancy rates, but the raw numbers are not comparable. 44 quarters harmonized onto identical definitions: which side of the border has the tighter labour market?",
@@ -19,6 +20,21 @@ export const metadata: Metadata = {
     description:
       "One vacancy rate, two countries, identical definitions. The US has been tighter in every quarter since 2015.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cross-Border Labour Tightness | Open Nshipyard",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cross-Border Labour Tightness | Open Nshipyard",
+    description:
+      "One vacancy rate, two countries, identical definitions. The US has been tighter in every quarter since 2015.",
+    images: ["/og-image.png"],
   },
 };
 
