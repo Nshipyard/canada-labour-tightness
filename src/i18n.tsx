@@ -12,6 +12,8 @@ const en = {
     methodology: "Methodology",
     data: "Data",
     back: "Open Nshipyard",
+    allProjects: "← All projects",
+    menu: "Menu",
     langLabel: "FR",
   },
   home: {
@@ -170,6 +172,8 @@ const fr: Dict = {
     methodology: "Methodologie",
     data: "Donnees",
     back: "Open Nshipyard",
+    allProjects: "← Tous les projets",
+    menu: "Menu",
     langLabel: "EN",
   },
   home: {
