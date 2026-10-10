@@ -1,0 +1,32 @@
+# Cross-Border Labour Tightness
+
+One vacancy rate, two countries, identical definitions. An Open Nshipyard project by Richardson Dackam.
+
+## What it answers
+
+Which side of the border has the tighter labour market? The United States, in every quarter from 2015Q1 to 2026Q2. Latest: US 4.67% vs Canada 2.80%, gap 1.87 percentage points. Widest gap: 2.46 points in 2021Q2.
+
+## Data
+
+- US: BLS JOLTS (monthly SA) + CES employment, via FRED keyless CSV. Government openings and employment removed.
+- Canada: StatCan 14-10-0400-01 (JVWS, quarterly SA by industry sector).
+- 44 quarters, 10 sector pairs on a NAICS crosswalk, rate recomputed as openings/(employment+openings)*100.
+
+## Files agents care about
+
+- `public/data/harmonized.json` - headline quarterly series (us_rate_exgov, ca_rate, gap_pp_us_minus_ca, tighter)
+- `public/data/sectors.json` - 10 sector pairs x quarters (us_rate, ca_rate, gap, bilingual labels and match notes)
+- `public/downloads/harmonized_quarterly.csv`, `public/downloads/harmonized_sectors.csv`
+- `scripts/build_data.py` - regenerates everything from live sources
+
+## API
+
+- GET /api/v1/tightness?quarter=2026Q2
+- GET /api/v1/sectors?quarter=2026Q2&pair=JTS2300
+- GET /api/v1/quarters
+- GET /api/openapi.json
+- POST /mcp - JSON-RPC 2.0 Streamable HTTP, tools: tightness_lookup, sector_ranking, trend
+
+## Limits
+
+Canada's total includes public administration; the US series excludes government. JVWS includes agriculture; JOLTS is nonfarm only. US sector coverage is limited to JOLTS industries carried by FRED (10 pairs). See /methodology.
